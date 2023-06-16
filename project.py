@@ -1,10 +1,10 @@
 # Define a dictionary of emojis and their corresponding descriptions
 emoji_dict = {
-    "1": "\U0001F600": "Feeling good",
-    "2": "\U0001F44D": "Thumbs up",
-    "3": "\U0001F923": "Hilarious",
-    "4": "\U0001F914": "Not sure",
-    "5": "\U0001F622": "Feeling sad
+    "1": ("\U0001F600", "Feeling good"),
+    "2": ("\U0001F44D", "Thumbs up"),
+    "3": ("\U0001F923", "Hilarious"),
+    "4": ("\U0001F914", "Not sure"),
+    "5": ("\U0001F622", "Feeling sad")
 }
 
 # Function to display the medication reminder
@@ -12,8 +12,8 @@ def show_medication_reminder():
     # Display available emoji options
     print("How do you feel after taking your medication?")
     print("Choose an emoji:")
-    for emoji_code, description in emoji_dict.items():
-        print(f"{emoji_code}: {description}")
+    for emoji_code, (emoji, description) in emoji_dict.items():
+        print(f"{emoji_code}: {emoji} - {description}")
     
     # Get user input
     while True:
@@ -28,4 +28,6 @@ def show_medication_reminder():
 
 # Example usage
 selected_emoji = show_medication_reminder()
-print(f"You selected: {emoji_dict[selected_emoji]}")
+emoji, description = emoji_dict[selected_emoji]
+print(f"You selected: {emoji} - {description}")
+
