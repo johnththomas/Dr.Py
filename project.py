@@ -85,13 +85,32 @@ def show_medication_reminder():
     emoji, feeling = emoji_dict[selected_emoji]
     print(f"You selected: {emoji} - {feeling}")
 
+# Function to set the medication reminder
 def set_reminder():
+    reminder_interval = int(input("Enter the reminder interval in seconds: "))
+    reminder_counter = 0
+
     while True:
-        # Display the reminder text
-        print("It's time to take your medication!")
-        
+        reminder_counter += 1
+        print(f"Reminder {reminder_counter}: It's time to take your medication!")
+
         # Wait for the specified interval
-        time.sleep(10)
+        time.sleep(reminder_interval)
+
+        # Prompt user for action: snooze or dismiss
+        action = input("Enter 'snooze' to snooze the reminder or 'dismiss' to stop the reminder: ")
+        
+        if action.lower() == "snooze":
+            snooze_duration = int(input("Enter the snooze duration in seconds: "))
+            print(f"Reminder snoozed for {snooze_duration} seconds.")
+            time.sleep(snooze_duration)
+        elif action.lower() == "dismiss":
+            print("Reminder dismissed.")
+            break
+        else:
+            print("Invalid action. Please enter 'snooze' or 'dismiss'.")
+
+    print("Reminder stopped.")
 
 def main():
     print("Welcome to the 'Dr.Py' Medicament Reminder!")
