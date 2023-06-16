@@ -18,7 +18,7 @@ Meds = ["Laughitol", "Freezepam", "Chuckle acid Drops", "Grinergy Drink", "Massa
 
 
 def print_menu():
-    print("----- Main Menu -----")
+    print("---Welcome to the 'Dr.Py'! We aim to help you overcome your troubles!---")
     for key, value in Diseases.items():
         print(f"{key}: {value}")
     print("---------------------")
