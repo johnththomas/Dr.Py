@@ -1,3 +1,5 @@
+import time
+
 # Define a dictionary of emojis and their corresponding descriptions
 emoji_dict = {
     "1": ("\U0001F600", "Feeling good"),
@@ -13,7 +15,7 @@ def show_medication_reminder():
     print("How do you feel after taking your medication?")
     print("Choose an emoji:")
     for emoji_code, (emoji, description) in emoji_dict.items():
-        print(f"{emoji_code}: {emoji} - {description}")
+        print(f"{emoji_code} - {emoji} - {description}")
     
     # Get user input
     while True:
@@ -23,11 +25,20 @@ def show_medication_reminder():
         else:
             print("Invalid emoji code. Please try again.")
     
-    # Return the selected emoji
-    return selected_emoji
+    # Print the selected emoji
+    print(f"You selected: {selected_emoji}")
+
+def set_reminder(reminder_text, interval):
+    while True:
+        # Display the reminder text
+        print(reminder_text)
+        
+        # Wait for the specified interval
+        time.sleep(interval)
 
 # Example usage
-selected_emoji = show_medication_reminder()
-emoji, description = emoji_dict[selected_emoji]
-print(f"You selected: {emoji} - {description}")
+reminder_text = "It's time to take your medication!"
+interval = 60  # 60 seconds = 1 minute
 
+show_medication_reminder()
+set_reminder(reminder_text, interval)
