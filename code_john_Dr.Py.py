@@ -45,41 +45,38 @@ def get_user_choice():
 #Add preparing prescription time window
 
 def give_med_choice():
-    while True:
-        try:
-            choice = get_user_choice()
-            if choice == 1:
+    
+        
+            choice1 = get_user_choice()
+            if choice1 == 1:
                 pc =(f"You should be having 2 shots of {Meds[0]} thrice a day")
-            elif choice == 2:
+            elif choice1 == 2:
                 pc =(f"You can try having 1 tablet of {Meds[1]} thrice a day")
-            elif choice == 3:
+            elif choice1 == 3:
                 pc =(f"You just have few drops of {Meds[2]} every 4 hours")
-            elif choice == 4:
+            elif choice1 == 4:
                 pc =(f"Try having {Meds[3]} once a day")
-            elif choice == 5:
+            elif choice1 == 5:
                 pc =(f"You should get a nice {Meds[4]} ")
-            elif choice == 6:
+            elif choice1 == 6:
                 pc =(f"Stop eating! Give your body a break. Smoke up {Meds[5]}")
-            elif choice == 7:
+            elif choice1 == 7:
                 pc =(f"You can try chewing {Meds[6]} few times a day")
-            elif choice == 8:
+            elif choice1 == 8:
                 pc =(f"Try {Meds[7]} and have cold shower")
-            elif choice == 9:
+            elif choice1 == 9:
                 pc =(f"You should be having 1 tab of {Meds[8]} twice a day")
             else:
                 pc =(f"You should be having 1 tablet of {Meds[9]} once a day")
             return pc
-        except ValueError:
-                print("Don't be shy. Just enter the number")
+        
 
 def main():
     print("Welcome to the 'Dr.Py'! We aim to help you overcome your troubles")
     display_menu()
-    health_problem_choice = get_user_choice()
-    selected_health_problem = Diseases[health_problem_choice]
-    med_choice = print(give_med_choice())
+    med_choice = print(f'{give_med_choice()}')
     print(f"""
-    Your problem is: {selected_health_problem}
+    Your problem is: {Diseases[get_user_choice()]}
     and my suggestion for you: {med_choice}
     """)
 
