@@ -1,4 +1,23 @@
+import random
 import time
+
+# Health Problems
+health_problems = {
+    1: "Headache",
+    2: "Muscle soreness",
+    3: "Depression",
+    4: "Overeating",
+    5: "Laziness"
+}
+
+# Medicaments
+medicaments = {
+    1: "Alcohol",
+    2: "Methamphetamine",
+    3: "Marijuana",
+    4: "Heroin",
+    5: "Cocaine"
+}
 
 # Define a dictionary of emojis and their corresponding descriptions
 emoji_dict = {
@@ -9,7 +28,44 @@ emoji_dict = {
     "5": ("\U0001F622", "Feeling sad")
 }
 
-# Function to display the medication reminder
+def display_menu():
+    print("Menu:")
+    print("1. Headache")
+    print("2. Muscle soreness")
+    print("3. Depression")
+    print("4. Overeating")
+    print("5. Laziness")
+
+def get_user_choice():
+    while True:
+        try:
+            choice = int(input("Please enter your disease (1-5): "))
+            if 1 <= choice <= 5:
+                return choice
+            else:
+                print("Invalid input. Please enter a number between 1 and 5.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+def select_medicament():
+    print("Select a medicament:")
+    print("1. Alcohol")
+    print("2. Methamphetamine")
+    print("3. Marijuana")
+    print("4. Heroin")
+    print("5. Cocaine")
+
+def get_medicament_choice():
+    while True:
+        try:
+            choice = int(input("Please enter your choice of medicament (1-5): "))
+            if 1 <= choice <= 5:
+                return choice
+            else:
+                print("Invalid input. Please enter a number between 1 and 5.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
 def show_medication_reminder():
     # Display available emoji options
     print("How do you feel after taking your medication?")
@@ -25,20 +81,33 @@ def show_medication_reminder():
         else:
             print("Invalid emoji code. Please try again.")
     
-    # Print the selected emoji
-    print(f"You selected: {selected_emoji}")
+    # Print the selected emoji and feeling
+    emoji, feeling = emoji_dict[selected_emoji]
+    print(f"You selected: {emoji} - {feeling}")
 
-def set_reminder(reminder_text, interval):
+def set_reminder():
     while True:
         # Display the reminder text
-        print(reminder_text)
+        print("It's time to take your medication!")
         
         # Wait for the specified interval
-        time.sleep(interval)
+        time.sleep(10)
 
-# Example usage
-reminder_text = "It's time to take your medication!"
-interval = 60  # 60 seconds = 1 minute
+def main():
+    print("Welcome to the 'Dr.Py' Medicament Reminder!")
+    display_menu()
+    health_problem_choice = get_user_choice()
+    selected_health_problem = health_problems[health_problem_choice]
+    print("You have selected:", selected_health_problem)
 
-show_medication_reminder()
-set_reminder(reminder_text, interval)
+    select_medicament()
+    medicament_choice = get_medicament_choice()
+    selected_medicament = medicaments[medicament_choice]
+    print("You have selected:", selected_medicament)
+
+    print("Prescription: Take", selected_medicament, "for", selected_health_problem)
+    show_medication_reminder()
+
+# Run the program
+main()
+set_reminder()
