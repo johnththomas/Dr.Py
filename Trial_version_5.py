@@ -1,3 +1,9 @@
+
+import os
+
+# Close any existing turtle graphics windows
+os.system('pkill -f "python -m turtle"')
+
 #Importing the required modules
 import time, sys, turtle
 from animation import animation_dr_py
@@ -194,18 +200,20 @@ def set_reminder():
                 action = input(colors_5 + "Enter '1'to snooze the reminder or '0'to dismiss and stop the reminder.\nPlease enter '0' or '1': " + colors_end_5)
 
                 if action == "0":
-                    print("Reminder dismissed. See you next time!")
+                    print("Reminder dismissed. See you next time!")                    
                     break
+                    
                 elif action == "1":
                     snooze_duration = int(input("Enter the snooze duration in seconds: "))
                     print(f"Reminder snoozed for {snooze_duration} seconds.")
-                    time.sleep(snooze_duration)
+                    time.sleep(snooze_duration)                                
                 else:
                     print(colors_3 + "Invalid action. Please enter '0' or '1'." + colors_end_3)
-            except ValueError:
-                print(colors_3 +"Invalid input" + colors_end_3)  
-        print("Reminder stopped.")  
 
+            except ValueError:
+                print(colors_3 +"Invalid input" + colors_end_3)         
+        print("Reminder stopped.") 
+        
 # dictionary of emojis used in the code
 emoji_dict = {
     "1": ("\U0001F600", "Feeling good"),
@@ -228,4 +236,7 @@ if choice_feedback() =='y':
 if choice_reminder() =='y':
     set_reminder()
 
-
+import turtle
+from anim import animation_dr_py_end
+# Call the animation function after the reminder is stopped
+animation_dr_py_end()
