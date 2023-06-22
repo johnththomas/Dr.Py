@@ -14,7 +14,7 @@ Dr.Py offers a reminder function to help users remember to take their medication
 
 ### Feedback Collection
 
-After taking the prescribed medication, users are prompted to provide feedback. Dr.Py presents a set of emojis representing different feedback options, and users can choose the corresponding number to express their experience. The program acknowledges the feedback and records it for future analysis.
+After taking the prescribed medication, users are prompted to provide feedback. Dr.Py presents a set of emojis representing different feedback options, and users can choose the corresponding number to express their experience. The program acknowledges the feedback and can be recorded for future analysis.
 
 The program displays the disease menu, and the user can enter the corresponding number for their health issue. Dr.Py suggests a medication option based on the selected disease. Afterward, the program collects user feedback on the medication experience. Finally, the reminder function allows users to set reminders for medication intake.
 
