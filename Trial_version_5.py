@@ -1,6 +1,6 @@
 #Importing the required modules
-import time, sys
-
+import time, sys, turtle
+from animation import animation_dr_py
 #Menu of dieases using nested dictionaries
 Diseases = {
             1: "Headache",
