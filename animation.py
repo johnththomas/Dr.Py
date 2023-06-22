@@ -1,4 +1,4 @@
-import turtle
+import turtle, time
 def animation_dr_py():
     # Set up the turtle screen
     screen = turtle.Screen()
@@ -51,22 +51,37 @@ def animation_dr_py():
 
     def draw_name():
         dr_py.penup()
-        dr_py.goto(0, -250)  # Adjust the position of the name
+        dr_py.goto(0, -300)  # Adjust the position of the name
         dr_py.pendown()
         dr_py.color("cyan")
-        dr_py.write("Dr. Py", align="center", font=("Arial", 60, "bold"))  # Increase the font size of the name
+        dr_py.write("Dr. Py \U0001FA7A", align="center", font=("Arial", 60, "bold"))  # Increase the font size of the name
+
+    def draw_name_start():
+        dr_py.penup()
+        dr_py.goto(0, 250)  # Adjust the position of the name
+        dr_py.pendown()
+        dr_py.color("cyan")
+        dr_py.write("Accept Your Destiny! \U0001F489 \U0001F351", align="center", font=("Arial", 50, "bold"))  # Increase the font size of the name
+
+    def draw_copyright():
+        dr_py.penup()
+        dr_py.goto(0, -500)  # Adjust the position of the name
+        dr_py.pendown()
+        dr_py.color("white")
+        dr_py.write("Copyright: All rights reserved for an extraordinary day\nfilled with laughter, joy, and unforgettable moments by:\nMarouan, John, Sergii, Ievgeniia. ", align="center", font=("Arial", 15, "bold"))  
 
     # Draw Dr. Py
+    draw_name_start()
     draw_name()
     draw_head()
-    draw_eyes()  
+    draw_eyes()    
     draw_smile()
-    
+    draw_copyright()
 
     # Hide the turtle object
     dr_py.hideturtle()
-    
-    #turtle.done() # it needed be closed by user
-    turtle.bye() # it will be closed automatically
+    # Exit the program when the turtle graphics window is closed
+    time.sleep(10)
+    turtle.bye()
     
 animation_dr_py()
