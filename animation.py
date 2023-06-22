@@ -59,14 +59,14 @@ def animation_dr_py():
     # Draw Dr. Py
     draw_name()
     draw_head()
-    draw_eyes()
-    #draw_eye_connection()
+    draw_eyes()  
     draw_smile()
     
 
     # Hide the turtle object
     dr_py.hideturtle()
-    # Exit the program when the turtle graphics window is closed
-    turtle.done()
+    
+    #turtle.done() # it needed be closed by user
+    turtle.bye() # it will be closed automatically
     
 animation_dr_py()
