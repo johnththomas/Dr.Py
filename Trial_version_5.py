@@ -235,6 +235,8 @@ if choice_feedback() =='y':
     get_feedback()
 if choice_reminder() =='y':
     set_reminder()
+            
+# Game
 
 import turtle
 from anim import animation_dr_py_end
