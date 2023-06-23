@@ -75,8 +75,9 @@ def animation_dr_py_end():
         # Hide the turtle object
         dr_py.hideturtle()
         # Exit the program when the turtle graphics window is closed
-        time.sleep(15)
-        turtle.bye()
+        turtle.done() # will closed by user
+        #time.sleep(15)
+        #turtle.bye() # will close automatically
     except turtle.Terminator:
         pass
     
